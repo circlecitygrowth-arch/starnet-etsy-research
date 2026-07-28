@@ -3,59 +3,129 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="StarNet Etsy Research is a private market-research and original-product planning tool.">
+  <meta name="description" content="A personal Etsy market-research project for comparing public listing details and planning original products.">
   <title>StarNet Etsy Research</title>
   <style>
-    :root { color-scheme: light; --ink:#17211b; --muted:#58645d; --paper:#f6f4ed; --card:#fffdf8; --line:#d9ddd7; --accent:#245c42; }
+    :root {
+      color-scheme: light;
+      --ink: #28241f;
+      --muted: #665f56;
+      --paper: #f4efe5;
+      --card: #fffdf8;
+      --line: #d7cdbc;
+      --accent: #9a451f;
+      --accent-dark: #693018;
+    }
     * { box-sizing: border-box; }
-    body { margin:0; background:var(--paper); color:var(--ink); font:17px/1.65 system-ui,-apple-system,"Segoe UI",sans-serif; }
-    main { width:min(760px,calc(100% - 40px)); margin:0 auto; padding:72px 0; }
-    header { padding-bottom:36px; border-bottom:1px solid var(--line); }
-    .label { color:var(--accent); font-size:.78rem; font-weight:750; letter-spacing:.14em; text-transform:uppercase; }
-    h1 { margin:.3rem 0 .75rem; font-size:clamp(2.2rem,7vw,4.4rem); line-height:1.02; letter-spacing:-.045em; }
-    .lede { max-width:650px; margin:0; color:var(--muted); font-size:1.15rem; }
-    section { padding:32px 0; border-bottom:1px solid var(--line); }
-    h2 { margin:0 0 10px; font-size:1.25rem; }
-    p { margin:.4rem 0 0; }
-    ul { margin:.75rem 0 0; padding-left:1.25rem; }
-    li + li { margin-top:.45rem; }
-    .note { margin-top:30px; padding:20px 22px; border:1px solid var(--line); border-radius:12px; background:var(--card); }
-    footer { padding-top:28px; color:var(--muted); font-size:.9rem; }
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font: 17px/1.65 Georgia, "Times New Roman", serif;
+    }
+    a { color: var(--accent-dark); text-underline-offset: 3px; }
+    a:hover { text-decoration-thickness: 2px; }
+    .wrap { width: min(780px, calc(100% - 38px)); margin: 0 auto; }
+    header { padding: 68px 0 42px; border-bottom: 1px solid var(--line); }
+    .eyebrow {
+      margin: 0 0 8px;
+      color: var(--accent);
+      font-family: system-ui, sans-serif;
+      font-size: .78rem;
+      font-weight: 750;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+    h1 { margin: 0 0 16px; font-size: clamp(2.3rem, 8vw, 4.5rem); line-height: 1; letter-spacing: -.035em; }
+    .intro { max-width: 680px; margin: 0; color: var(--muted); font-size: 1.2rem; }
+    main { padding-bottom: 50px; }
+    section { padding: 31px 0; border-bottom: 1px solid var(--line); }
+    h2 { margin: 0 0 12px; font-size: 1.35rem; }
+    p { margin: .55rem 0 0; }
+    ol, ul { margin: .8rem 0 0; padding-left: 1.35rem; }
+    li + li { margin-top: .45rem; }
+    .status {
+      margin: 31px 0 0;
+      padding: 20px 22px;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-left: 5px solid var(--accent);
+      border-radius: 4px;
+    }
+    .status strong { font-family: system-ui, sans-serif; font-size: .92rem; }
+    .facts { display: grid; grid-template-columns: 150px 1fr; gap: 9px 18px; margin: 16px 0 0; }
+    .facts dt { font-weight: bold; }
+    .facts dd { margin: 0; }
+    footer { padding: 28px 0 48px; color: var(--muted); font-family: system-ui, sans-serif; font-size: .9rem; }
+    @media (max-width: 560px) {
+      header { padding-top: 48px; }
+      .facts { grid-template-columns: 1fr; gap: 2px; }
+      .facts dd + dt { margin-top: 9px; }
+    }
   </style>
 </head>
 <body>
-  <main>
-    <header>
-      <div class="label">Private internal tool</div>
+  <header>
+    <div class="wrap">
+      <p class="eyebrow">Personal project</p>
       <h1>StarNet Etsy Research</h1>
-      <p class="lede">A private research and planning application used to study permitted Etsy marketplace information and help develop original products for one future seller business.</p>
-    </header>
+      <p class="intro">I'm building this small internal tool while I plan an Etsy shop. I wanted one place to compare public listing details, write down what I notice, and decide which original product ideas are worth testing.</p>
+    </div>
+  </header>
 
-    <section>
-      <h2>What the application does</h2>
-      <ul>
-        <li>Reviews publicly available shop and listing information through Etsy's approved API.</li>
-        <li>Identifies broad market patterns such as product categories, price ranges, personalization options, and listing structures.</li>
-        <li>Supports internal planning for original products, listings, and marketing experiments.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Who uses it</h2>
-      <p>The application is for private use by its owner and authorized internal collaborators. It is not offered as a public service or sold to other Etsy sellers.</p>
-    </section>
-
-    <section>
-      <h2>Data and intellectual-property boundaries</h2>
-      <p>The application does not scrape Etsy, access private seller information without authorization, or reproduce another seller's artwork, photography, files, branding, or listing copy. Research is used to inform clean-room development of original products and materials.</p>
-    </section>
-
-    <div class="note">
-      <strong>API use</strong>
-      <p>Access is limited to endpoints, data, and permissions authorized by Etsy and the connected account. Credentials and authorization tokens are kept private and are never displayed on this site.</p>
+  <main class="wrap">
+    <div class="status">
+      <strong>Current status: early prototype</strong>
+      <p>My Etsy API key request is under review. The public repository currently holds this project page and documentation; the API research workflow will be connected and tested after access is approved.</p>
     </div>
 
-    <footer>StarNet Etsy Research &middot; Internal application homepage</footer>
+    <section>
+      <h2>Why I started it</h2>
+      <p>I was collecting product notes across browser tabs and loose documents, which got messy fast. This project is meant to make that routine more consistent: choose one category, compare the same public fields, keep my own notes, and then make a decision.</p>
+      <p>It is for my own use. There is no public signup, no customer account system, and I am not offering it to other Etsy sellers.</p>
+    </section>
+
+    <section>
+      <h2>Planned research routine</h2>
+      <ol>
+        <li>Choose one product phrase or category I want to study.</li>
+        <li>Retrieve the public listing fields Etsy permits through the Open API.</li>
+        <li>Compare practical details such as price, category, personalization choices, and listing structure.</li>
+        <li>Write my own notes and decide whether to prototype an original product.</li>
+      </ol>
+      <p>The purpose is comparison and note-taking. It is not a listing copier, bulk downloader, or resale service.</p>
+    </section>
+
+    <section>
+      <h2>How I plan to use the Etsy API</h2>
+      <dl class="facts">
+        <dt>API</dt><dd>Etsy Open API v3</dd>
+        <dt>Current access</dt><dd>Application pending personal approval</dd>
+        <dt>Users</dt><dd>One: the project owner</dd>
+        <dt>Public accounts</dt><dd>None</dd>
+        <dt>Write actions</dt><dd>Not part of the initial research workflow</dd>
+        <dt>Credentials</dt><dd>Stored outside this public repository</dd>
+      </dl>
+      <p>I will use the API rather than scrape Etsy pages. I will request only the permissions needed for the workflow, and I will document the final scopes and data-retention rules here after the first working connection is tested.</p>
+    </section>
+
+    <section>
+      <h2>What stays human</h2>
+      <p>I choose what to research, review the results, write the notes, and approve every product decision. Automation may help organize public information, but it does not decide what I sell or publish listings on its own.</p>
+    </section>
+
+    <section>
+      <h2>Boundaries</h2>
+      <p>I do not use this project to copy listing text, download products, or reproduce another seller's artwork, photos, files, branding, or designs. Any products, images, descriptions, and branding for my shop will be made separately as original work.</p>
+      <p>API credentials and authorization tokens are never committed to GitHub or displayed on this website. More detail is in the project's <a href="https://github.com/circlecitygrowth-arch/starnet-etsy-research/blob/main/PRIVACY.md">privacy notes</a>.</p>
+    </section>
+
+    <section>
+      <h2>Project record</h2>
+      <p>The source and update history are public in the <a href="https://github.com/circlecitygrowth-arch/starnet-etsy-research">GitHub repository</a>. Questions can be opened through <a href="https://github.com/circlecitygrowth-arch/starnet-etsy-research/issues">GitHub Issues</a>.</p>
+    </section>
   </main>
+
+  <footer class="wrap">Maintained as a personal project. Independent from Etsy and not endorsed by Etsy.</footer>
 </body>
 </html>
